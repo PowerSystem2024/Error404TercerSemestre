@@ -1,4 +1,4 @@
-package ar.system2025.mundopc;
+package ar.com.system2025.mundopc;
 
 public class DispositivoEntrada {
     private String tipoEntrada;
