@@ -1,0 +1,95 @@
+/* Estilos generales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2d2d2d;
+  margin: 0;
+  padding: 0;
+  background-image: url('../assets/Avatar.jpg'); /* Asegúrate que la ruta es correcta */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Título principal */
+h1, h2 {
+  text-align: center;
+  color: #4a2c1d;
+  background-color: rgba(255, 248, 220, 0.8);
+  padding: 20px;
+  margin: 0;
+  font-size: 2.5em;
+}
+
+/* Secciones */
+section {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.85); /* Fondo translúcido */
+  border: 2px solid #d4a373;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Etiquetas */
+label {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid #b08968;
+  border-radius: 10px;
+  background-color: #f0e1c1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 130px;
+  text-align: center;
+  font-weight: bold;
+}
+
+label:hover {
+  background-color: #d6b88f;
+}
+
+/* Radio buttons ocultos */
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #c9a66b;
+  border-color: #6b4226;
+  color: #fff;
+}
+
+/* Botones */
+button {
+  background-color: #8b4513;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  margin: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #a0522d;
+}
+
+/* Botón reiniciar */
+#reiniciar button {
+  background-color: #964b00;
+  font-weight: bold;
+}
+
+/* Mensajes */
+#mensajes p {
+  background-color: #fcf8e3;
+  border-left: 6px solid #f0ad4e;
+  padding: 10px;
+  font-style: italic;
+  color: #5c3d1e;
+}
+
