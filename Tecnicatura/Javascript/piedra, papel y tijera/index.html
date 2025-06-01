@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piedra, Papel o Tijera</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="contenedor">
+      <header>
+        <h1>Piedra, Papel o Tijera</h1>
+        <p>¡Elige tu jugada y compite contra la computadora!</p>
+      </header>
+      <div class="marcador">
+        <div class="caja-puntaje">
+          <h2>Jugador</h2>
+          <p id="puntaje-jugador">0</p>
+        </div>
+        <div class="caja-puntaje">
+          <h2>Computadora</h2>
+          <p id="puntaje-computadora">0</p>
+        </div>
+      </div>
+      <div class="contenedor-juego">
+        <div class="resultado">
+          <p id="texto-resultado">¡Haz tu selección!</p>
+        </div>
+        <div class="opciones">
+          <div class="contenedor-opcion">
+            <div class="opcion" id="piedra">
+              <img src="images/piedra.png" alt="Piedra" />
+            </div>
+            <p>Piedra</p>
+          </div>
+
+          <div class="contenedor-opcion">
+            <div class="opcion" id="papel">
+              <img src="images/papel.png" alt="Papel" />
+            </div>
+            <p>Papel</p>
+          </div>
+
+          <div class="contenedor-opcion">
+            <div class="opcion" id="tijera">
+              <img src="images/tijera.png" alt="Tijera" />
+            </div>
+            <p>Tijera</p>
+          </div>
+        </div>
+        <div class="selecciones">
+          <div class="seleccion">
+            <h3>Tu elección:</h3>
+            <div id="seleccion-jugador"></div>
+          </div>
+          <div class="seleccion">
+            <h3>Computadora:</h3>
+            <div id="seleccion-computadora"></div>
+          </div>
+        </div>
+
+        <button id="boton-reinicio">Reiniciar juego</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
