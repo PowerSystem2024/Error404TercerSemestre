@@ -13,3 +13,8 @@
 /Tecnicatura/Java/Clase 7/Interfaces/nbproject/private/
 /Tecnicatura/Java/Clase 8/JavaBeans/nbproject/private/
 /Tecnicatura/Java/Clase 8/ManejoExcepciones1/nbproject/private/
+# credenciales de acceso a la db
+*.env
+*.env.example
+*.env.local
+*.env.staging
