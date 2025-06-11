@@ -1,13 +1,22 @@
 /* Estilos generales */
+html, body {
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #2d2d2d;
-  margin: 0;
-  padding: 0;
   background-image: url('../assets/Avatar.jpg'); /* Asegúrate que la ruta es correcta */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed; /* Fondo fijo para que no se agrande */
 }
 
 /* Título principal */
@@ -72,10 +81,24 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
 }
 
+/* Efecto hover */
 button:hover {
   background-color: #a0522d;
+}
+
+/* Evitar que los botones se escalen al hacer clic */
+button:active {
+  transform: scale(1) !important;
+  padding: 12px 24px !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Botón reiniciar */
@@ -92,4 +115,3 @@ button:hover {
   font-style: italic;
   color: #5c3d1e;
 }
-
