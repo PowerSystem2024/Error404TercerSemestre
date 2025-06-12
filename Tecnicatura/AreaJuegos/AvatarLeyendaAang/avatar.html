@@ -8,6 +8,27 @@
 </head>
 <body>
     <h1>Avatar: La Leyenda de Aang</h1>
+    
+    <!-- Botón para abrir el modal -->
+    <section class="seccion-reglas">
+        <button id="boton-reglas">Reglas del Juego</button>
+    </section>
+    <!-- Modal de reglas -->
+    <div id="modal-reglas" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="cerrar-reglas">&times;</span>
+            <h2>Reglas del Juego</h2>
+            <ul>
+                <li>Selecciona un personaje antes de atacar.</li>
+                <li>Cada jugador empieza con 3 vidas.</li>
+                <li>Perder un combate resta una vida</li>
+                <li>Los ataques son: Puño, Patada o Barrida.</li>
+                <li>Puño vence a Barrida</li>
+                <li>Patada vence a Puño</li>
+                <li>Barrida vence a Patada</li>
+            </ul>
+        </div>
+    </div>
 
     <section class="seleccionar-personaje" id="seleccionar-personaje">
         <h2>Elige tu personaje</h2>
@@ -47,9 +68,7 @@
         </p>
     </section>
 
-    <!-- Mensaje dinamico -->
     <section id="mensajes">
-        <p></p>
     </section>
 
     <section id="reiniciar">
