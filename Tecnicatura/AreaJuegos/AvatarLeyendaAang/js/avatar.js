@@ -117,7 +117,7 @@ function combate() {
     revisarVidas();
 }
 
-// Función para revisar las vidas del usuario y enemigo
+// Función para revisar las vidas del usuario y enemigo y comprobar quien ganó y perdió
 function revisarVidas() {
     if (vidasEnemigo === 0) {
         crearMensajeFinal("🎉 FELICITACIONES!!! HAS GANADO");
@@ -130,6 +130,7 @@ function revisarVidas() {
     }
 }
 
+//Funcíon para mostrar por detalle el combate y ver que ataque utilizo el usuario y el enemigo
 function crearMensaje(resultado) {
     let sectionMensaje = document.getElementById('mensajes');
     let parrafo = document.createElement('p');
@@ -137,6 +138,7 @@ function crearMensaje(resultado) {
     sectionMensaje.appendChild(parrafo);
 }
 
+// Función para ver el resultado final
 function crearMensajeFinal(resultado) {
     let sectionMensaje = document.getElementById('mensajes');
     let parrafo = document.createElement('p');
@@ -144,12 +146,14 @@ function crearMensajeFinal(resultado) {
     sectionMensaje.appendChild(parrafo);
 }
 
+// Función para deshabilitar el boton de ataque cuando termina el combate
 function deshabilitarAtaques() {
     document.getElementById('boton-punio').disabled = true;
     document.getElementById('boton-patada').disabled = true;
     document.getElementById('boton-barrida').disabled = true;
 }
 
+// Función para reiniciar el juego, y poder volver a iniciar otro combate
 function reiniciarJuego() {
     vidasJugador = 3;
     vidasEnemigo = 3;
