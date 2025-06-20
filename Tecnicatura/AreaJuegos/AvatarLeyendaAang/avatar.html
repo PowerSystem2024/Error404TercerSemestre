@@ -13,8 +13,9 @@
     <section class="seccion-reglas">
         <button id="boton-reglas">Reglas del Juego</button>
     </section>
+    
     <!-- Modal de reglas -->
-    <div id="modal-reglas" class="modal">
+    <div id="modal-reglas" class="modal" style="display:none;">
         <div class="modal-contenido">
             <span class="cerrar-modal" id="cerrar-reglas">&times;</span>
             <h2>Reglas del Juego</h2>
@@ -48,30 +49,22 @@
         <button id="boton-personaje">Seleccionar</button>
     </section>
 
-    <section id="seleccionar-ataque">
+    <section id="seleccionar-ataque" style="display:none;">
         <h2>Elige tu ataque</h2>
-        <p>
-            Tu personaje <span id="personaje-jugador"></span> tiene
-            <span id="vida-jugador">3</span> vidas
-        </p>
-        <p>
-            El personaje <span id="personaje-enemigo"></span> enemigo tiene
-            <span id="vida-enemigo">3</span> vidas
-        </p>
-
+        <p>Tu personaje <span id="personaje-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
+        <p>El personaje <span id="personaje-enemigo"></span> de tu enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
         <p>
             Elige un ataque:
             <br />
-            <button id="boton-punio">Punio 👊</button>
+            <button id="boton-punio">Puño 👊</button>
             <button id="boton-patada">Patada 🦵</button>
             <button id="boton-barrida">Barrida 👣</button>
         </p>
     </section>
 
-    <section id="mensajes">
-    </section>
+    <section id="mensajes"></section>
 
-    <section id="reiniciar">
+    <section id="reiniciar" style="display:none;">
         <button id="btn-reiniciar">Reiniciar</button>
     </section>
 
