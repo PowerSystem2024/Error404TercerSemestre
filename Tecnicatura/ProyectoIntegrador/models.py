@@ -93,3 +93,97 @@ class LibroModel:
         except Exception as e:
             print(f"Error al actualizar copias: {e}")
             return None
+
+
+class PrestamoModel:
+    @staticmethod
+    def crear_prestamo(id_usuario, id_libro, dias_prestamo=14):
+        """Crear un nuevo préstamo"""
+        try:
+            fecha_prestamo = datetime.now().date()
+            fecha_vencimiento = fecha_prestamo + timedelta(days=dias_prestamo)
+
+            response = supabase.table('prestamos').insert({
+                "id_usuario": id_usuario,
+                "id_libro": id_libro,
+                "fecha_prestamo": str(fecha_prestamo),
+                "fecha_vencimiento": str(fecha_vencimiento)
+            }).execute()
+            return response.data[0] if response.data else None
+        except Exception as e:
+            print(f"Error al crear préstamo: {e}")
+            return None
+
+    @staticmethod
+    def devolver_libro(id_prestamo):
+        """Marcar un libro como devuelto"""
+        try:
+            fecha_devolucion = datetime.now().date()
+            response = supabase.table('prestamos').update({
+                'fecha_devolucion': str(fecha_devolucion)
+            }).eq('id', id_prestamo).execute()
+            return response.data[0] if response.data else None
+        except Exception as e:
+            print(f"Error al devolver libro: {e}")
+            return None
+
+    @staticmethod
+    def obtener_prestamos_activos(id_usuario=None):
+        """Obtener préstamos activos (no devueltos)"""
+        try:
+            query = supabase.table('prestamos').select("""
+                *,
+                usuarios(nombre, username),
+                libros(titulo, autor)
+            """).is_('fecha_devolucion', 'null')
+
+            if id_usuario:
+                query = query.eq('id_usuario', id_usuario)
+
+            response = query.execute()
+            return response.data
+        except Exception as e:
+            print(f"Error al obtener préstamos activos: {e}")
+            return []
+
+
+class SolicitudModel:
+    @staticmethod
+    def crear_solicitud(id_usuario, id_libro):
+        """Crear una nueva solicitud de libro"""
+        try:
+            response = supabase.table('solicitudes_libros').insert({
+                "id_usuario": id_usuario,
+                "id_libro": id_libro,
+                "estado": "pendiente"
+            }).execute()
+            return response.data[0] if response.data else None
+        except Exception as e:
+            print(f"Error al crear solicitud: {e}")
+            return None
+
+    @staticmethod
+    def obtener_solicitudes_pendientes():
+        """Obtener todas las solicitudes pendientes"""
+        try:
+            response = supabase.table('solicitudes_libros').select("""
+                *,
+                usuarios(nombre, username),
+                libros(titulo, autor)
+            """).eq('estado', 'pendiente').execute()
+            return response.data
+        except Exception as e:
+            print(f"Error al obtener solicitudes: {e}")
+            return []
+
+    @staticmethod
+    def actualizar_estado_solicitud(id_solicitud, nuevo_estado):
+        """Actualizar el estado de una solicitud"""
+        try:
+            response = supabase.table('solicitudes_libros').update({
+                'estado': nuevo_estado
+            }).eq('id', id_solicitud).execute()
+            return response.data[0] if response.data else None
+        except Exception as e:
+            print(f"Error al actualizar solicitud: {e}")
+            return None
